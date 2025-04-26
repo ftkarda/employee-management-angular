@@ -1,0 +1,45 @@
+<table class="employee-table">
+  <thead class="employee-table-header">
+    <tr>
+      <th>No</th>
+      <th>Username</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Salary</th>
+      <th>Status</th>
+      <th>Group</th>
+      <th *ngIf="isUseAction">Actions</th>
+    </tr>
+  </thead>
+  <tbody class="employee-table-body">
+    <tr *ngFor="let employee of paginatedEmployees; index as i">
+      <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+      <td>{{ employee.username }}</td>
+      <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+      <td>{{ employee.email }}</td>
+      <td>Rp {{ employee.basicSalary | number:'1.0-2' }}</td>
+      <td>{{ employee.status }}</td>
+      <td>{{ employee.group }}</td>
+      <td *ngIf="isUseAction" class="employee-table-actions">
+        <button class="btn-edit" (click)="onEditEmployee(employee.id!)">Edit</button>
+        <button class="btn-delete" (click)="onDeleteEmployee(employee.id!)">Delete</button>
+        <button class="btn-view" (click)="onViewDetails(employee.id!)">View</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<nav class="pagination-nav" *ngIf="employees.length > itemsPerPage">
+  <ul class="pagination-list">
+    <li class="pagination-item" [class.disabled]="currentPage === 1">
+      <a (click)="onPrevPage()">Previous</a>
+    </li>
+    <li class="pagination-item" [class.disabled]="currentPage === totalPages()">
+      <a (click)="onNextPage()">Next</a>
+    </li>
+  </ul>
+
+  <select class="pagination-select" [(ngModel)]="itemsPerPage" (change)="currentPage = 1">
+    <option *ngFor="let option of itemsPerPageOptions" [value]="option">{{ option }} / page</option>
+  </select>
+</nav>

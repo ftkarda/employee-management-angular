@@ -1,0 +1,19 @@
+<div class="form-group">
+
+  <label [for]="id">{{ label }}</label>
+
+  <input
+    *ngIf="type ==='text'"
+    [id]="id"
+    [(ngModel)]="value"
+    (input)="onValueChange($event)"
+    [type]="id === 'email' ? 'email' : type"
+    [placeholder]="placeholder"
+    [required]="required"
+    class="form-control"
+  />
+
+  <div *ngIf="validation.error" class="text-danger">
+    {{ validation.message }}
+  </div>
+</div>

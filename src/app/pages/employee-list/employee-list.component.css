@@ -1,0 +1,25 @@
+.employee-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .employee-list-header h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .employee-list-header button {
+    background-color: #dc3545;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .employee-list-header button:hover {
+    background-color: #c82333;
+  }

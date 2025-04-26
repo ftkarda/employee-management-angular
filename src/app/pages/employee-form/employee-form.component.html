@@ -1,0 +1,72 @@
+<div class="employee-form-container">
+  <h2>{{ employeeId ? 'Edit' : 'Add' }} Employee</h2>
+
+  <div>
+    <form (ngSubmit)="saveEmployee()" #employeeForm="ngForm" class="employee-form">
+      <div *ngFor="let fieldKey of objectKeys(schema)">
+
+        <div>
+          {{schema[fieldKey].label}}
+        </div>
+
+        <div [ngSwitch]="schema[fieldKey].type">
+          <text-input-component *ngSwitchCase="'text'"
+           [id]="schema[fieldKey].id" 
+           [type]="schema[fieldKey].type"
+           [(value)]="schema[fieldKey].value"
+           [required]="schema[fieldKey].required" 
+           [placeholder]="schema[fieldKey].placeholder"
+           [validation]="schema[fieldKey].validation" 
+          >
+          </text-input-component>
+
+          <text-area-component *ngSwitchCase="'textarea'" 
+            [id]="schema[fieldKey].id" 
+            [(value)]="schema[fieldKey].value"
+            [required]="schema[fieldKey].required"
+            [placeholder]="schema[fieldKey].placeholder" 
+            [validation]="schema[fieldKey].validation" 
+            [rows]="4"
+          >
+          </text-area-component>
+
+          <select-input-component *ngSwitchCase="'select'" 
+            [id]="schema[fieldKey].id"
+            [(value)]="schema[fieldKey].value"
+            [required]="schema[fieldKey].required" 
+            [options]="schema[fieldKey].options"
+            [validation]="schema[fieldKey].validation" 
+          >
+          </select-input-component>
+
+          <input-number-component *ngSwitchCase="'number'" 
+            [id]="schema[fieldKey].id" 
+            [(value)]="schema[fieldKey].value"
+            [required]="schema[fieldKey].required" 
+            [min]="schema[fieldKey].min" 
+            [max]="schema[fieldKey].max"
+            [validation]="schema[fieldKey].validation" 
+            [placeholder]="schema[fieldKey].placeholder"
+          >
+          </input-number-component>
+
+          <date-input-component *ngSwitchCase="'date'" 
+            [id]="schema[fieldKey].id" 
+            [(value)]="schema[fieldKey].value"
+            [required]="schema[fieldKey].required"
+            [validation]="schema[fieldKey].validation" 
+          >
+          </date-input-component>
+        </div>
+      </div>
+
+      <div class="employee-form-buttons">
+        <button class="cancel-button" type="button" (click)="goBack()">Cancel</button>
+
+        <button type="submit"  class="submit-button" [disabled]="employeeForm.invalid">
+          {{ employeeId ? 'Update' : 'Create' }} Employee
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

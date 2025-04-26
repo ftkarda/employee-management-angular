@@ -1,0 +1,18 @@
+<div class="form-group">
+
+  <label [for]="id">{{ label }}</label>
+  
+  <input
+    type="date"
+    [id]="id"
+    [(ngModel)]="value"
+    [required]="required"
+    (ngModelChange)="onValueChange($event)"
+    [max]="today"
+    class="form-control"
+  />
+
+  <div *ngIf="validation.error" class="text-danger">
+    {{ validation.message }}
+  </div>
+</div>

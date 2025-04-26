@@ -1,0 +1,38 @@
+.employee-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .employee-filter input,
+  .employee-filter select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    min-width: 200px;
+  }
+  
+  .employee-filter button {
+    background-color: #28a745;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .employee-filter button:hover {
+    background-color: #218838;
+  }
+
+  .margin-right-10{
+    margin-right: 10px;
+  }
+
+  .margin-left-10{
+    margin-left: 10px;
+  }

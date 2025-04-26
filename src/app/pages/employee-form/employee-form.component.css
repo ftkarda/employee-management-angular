@@ -1,0 +1,50 @@
+.employee-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.employee-form-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 20px;
+  color: #333;
+}
+
+.employee-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.employee-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.employee-form-buttons button {
+  padding: 10px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.employee-form-buttons .cancel-button {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.employee-form-buttons .submit-button {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.employee-form-buttons button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}

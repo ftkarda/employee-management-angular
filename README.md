@@ -1,59 +1,52 @@
-# EmployeeManagementAngular
+# Employee Management App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+I use **Faker.js** to generate 100 dummy data entries and **JSON Server** to run a fake API.
 
-## Development server
+## 1. Run Employee Data (Port 3000)
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+For employee data, please run:
 
 ```bash
-ng generate component component-name
+json-server --watch db/db.json --port 3000
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+✅ Make sure you are inside the `db` folder and running on **port 3000**.
+
+## 2. Run Groups Data (Port 3001)
+
+For groups data, please run:
 
 ```bash
-ng generate --help
+json-server --watch db/groups.json --port 3001
 ```
 
-## Building
+✅ Make sure you are inside the `db` folder and running on **port 3001**.
 
-To build the project run:
+## 3. Run Users Data (Port 3002)
+
+For users data, please run:
 
 ```bash
-ng build
+json-server --watch db/users.json --port 3002
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+✅ Make sure you are inside the `db` folder and running on **port 3002**.
 
-## Running unit tests
+## 4. Run the Application
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+To run the app, simply use:
 
 ```bash
-ng test
+npm run start
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## Notes
+- Make sure all three JSON servers are running before starting the application.
+- This setup simulates real-world API interactions using `json-server`.
+- If you don't have `json-server` installed, you can install it globally using:
 
 ```bash
-ng e2e
+npm install -g json-server
 ```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

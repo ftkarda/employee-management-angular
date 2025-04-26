@@ -1,0 +1,14 @@
+{
+    "groups": [
+      { "id": 1, "name": "Engineering" },
+      { "id": 2, "name": "Marketing" },
+      { "id": 3, "name": "Sales" },
+      { "id": 4, "name": "HR" },
+      { "id": 5, "name": "Product" },
+      { "id": 6, "name": "BE" },
+      { "id": 7, "name": "FE" },
+      { "id": 8, "name": "QA" },
+      { "id": 9, "name": "BA" },
+      { "id": 10, "name": "DO" }
+    ]
+  }

@@ -1,0 +1,22 @@
+<div class="employee-filter">
+    <div>
+        <input class="margin-right-10" type="text" [(ngModel)]="searchTerm" (input)="onSearchChange()" placeholder="Search by name..."
+           />
+        <select class="margin-right-10; margin-left-10" [(ngModel)]="selectedGroup" (change)="onGroupChange()" >
+            <option value="">All Groups</option>
+            <option *ngFor="let group of groups" [value]="group.name">{{ group.name }}</option>
+        </select>
+
+        <select class="margin-right-10; margin-left-10" [(ngModel)]="sortOption" (change)="onSortChange()" >
+            <option value="latest">Descending</option>
+            <option value="oldest">Ascending</option>
+            <option value="nameAsc">Name (A-Z)</option>
+            <option value="nameDesc">Name (Z-A)</option>
+            <option value="salaryAsc">Salary (Low to High)</option>
+            <option value="salaryDesc">Salary (High to Low)</option>
+        </select>
+    </div>
+    <div>
+        <button (click)="addEmployee()">Add</button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div>
+  <div class="employee-list-header">
+    <h2>Employee List</h2>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <app-employee-filter
+    [groups]="groups"
+    [searchTerm]="searchTerm"
+    [selectedGroup]="selectedGroup"
+    [sortOption]="sortOption"
+    [itemsPerPage]="itemsPerPage"
+    (searchChange)="onSearchChange($event)"
+    (groupChange)="onGroupChange($event)"
+    (sortOptionChange)="onSortChange($event)"
+    (createEmployee)="createEmployee()"
+  >
+  </app-employee-filter>
+
+  <app-employee-table 
+    [employees]="filteredEmployees"
+    [searchTerm]="searchTerm"
+    [selectedGroup]="selectedGroup"
+    [sortOption]="sortOption"
+    [currentPage]="currentPage"
+    [itemsPerPage]="itemsPerPage"
+    [itemsPerPageOptions]="itemsPerPageOptions"
+    (deleteEmployee)="deleteEmployee($event)"
+    (editEmployee)="editEmployee($event)"
+    (viewDetails)="viewDetails($event)"
+    (prevPage)="prevPage()"
+    (nextPage)="nextPage()"
+    [isUseAction]="true"
+  >
+  </app-employee-table>
+</div>

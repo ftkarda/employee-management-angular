@@ -1,0 +1,19 @@
+<div class="form-group">
+
+  <label [for]="id">{{ label }}</label>
+  
+  <input 
+    *ngIf="type ==='number'" 
+    [type]="type" class="form-control" 
+    [id]="id" 
+    [placeholder]="placeholder"
+    [(ngModel)]="value" 
+    [required]="required" 
+    (ngModelChange)="onValueChange($event)" 
+    [min]="min!" 
+    [max]="max!" 
+  />
+  <div *ngIf="validation.error" class="text-danger">
+    {{ validation.message }}
+  </div>
+</div>

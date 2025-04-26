@@ -1,0 +1,19 @@
+<div class="form-group">
+
+  <label [for]="id">{{ label }}</label>
+
+  <textarea
+    [id]="id"
+    [(ngModel)]="value"
+    [required]="required"
+    [placeholder]="placeholder"
+    [rows]="rows"
+    (ngModelChange)="onValueChange($event)"
+    class="form-control"
+  >
+  </textarea>
+
+  <div *ngIf="validation.error" class="text-danger">
+    {{ validation.message }}
+  </div>
+</div>
